@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MyShop.Core.Models;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -9,5 +10,12 @@ namespace MyShop.DataAccess.SQL
 {
     public class DataContext : DbContext
     {
+        public DataContext() : base("DefaultConnection")
+        {
+
+        }
+
+        public DbSet<Product> Products { get; set; }
+        public DbSet<ProductCategory> ProductCategories { get; set; }
     }
 }
